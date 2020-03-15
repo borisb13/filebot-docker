@@ -26,4 +26,27 @@ WORKDIR /tmp
 
 SHELL ["/bin/bash", "-c"]
 
+# Generate and install favicons.
+RUN \
+    APP_ICON_URL=https://raw.githubusercontent.com/borisb13/filebot-docker/master/filebot-icon.png && \
+    install_app_icon.sh "$APP_ICON_URL"
+
+# Set environment variables.
+ENV APP_NAME="FileBot" \
+    AMC_INTERVAL="300" \
+    AMC_INPUT_STABLE_TIME="10" \
+    AMC_ACTION="move" \
+    AMC_CONFLICT="auto" \
+    AMC_MATCH_MODE="opportunistic" \
+    AMC_ARTWORK="n" \
+    AMC_MUSIC_FORMAT="{plex}" \
+    AMC_MOVIE_FORMAT="{plex}" \
+    AMC_SERIES_FORMAT="{plex}" \
+    AMC_ANIME_FORMAT="{plex}" \
+    AMC_PROCESS_MUSIC="n" \
+    AMC_SUBTITLE_LANG= \
+    AMC_CUSTOM_OPTIONS= \
+    AMC_INPUT_FOLDER=/watch \
+    AMC_OUTPUT_FOLDER=/output
+
 #ENTRYPOINT ["filebot"]
