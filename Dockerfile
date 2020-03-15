@@ -26,11 +26,6 @@ WORKDIR /tmp
 
 SHELL ["/bin/bash", "-c"]
 
-# Generate and install favicons.
-RUN \
-    APP_ICON_URL=https://raw.githubusercontent.com/borisb13/filebot-docker/master/filebot-icon.png && \
-    install_app_icon.sh "$APP_ICON_URL"
-
 # Set environment variables.
 ENV APP_NAME="FileBot" \
     AMC_INTERVAL="300" \
