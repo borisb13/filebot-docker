@@ -13,7 +13,7 @@ RUN apt-get update \
  
 RUN \
     curl -# -L ${FILEBOT_URL} --output /tmp/filebot.deb && \
-    apt install /tmp/filebot.deb
+    apt install -y /tmp/filebot.deb
 
 #RUN apt-key adv --fetch-keys https://raw.githubusercontent.com/filebot/plugins/master/gpg/maintainer.pub  \
 # && echo "deb [arch=all] https://get.filebot.net/deb/ universal main" > /etc/apt/sources.list.d/filebot.list \
