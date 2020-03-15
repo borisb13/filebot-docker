@@ -22,6 +22,6 @@ ENV HOME /data
 ENV LANG C.UTF-8
 ENV FILEBOT_OPTS "-Dapplication.deployment=docker -Duser.home=$HOME"
 
-WORKDIR /watch
+WORKDIR /tmp
 
 ENTRYPOINT ["filebot"]
