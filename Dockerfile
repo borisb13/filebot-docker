@@ -6,7 +6,8 @@ ARG DOCKER_IMAGE_VERSION=unknown
 ARG FILEBOT_VERSION=4.8.5
 ARG FILEBOT_URL=https://github.com/barry-allen07/FB-Mod/releases/download/${FILEBOT_VERSION}/FileBot_${FILEBOT_VERSION}_amd64.deb
 
-SHELL ["/bin/bash", "-c"]
+RUN cp /bin/bash /bin/sh
+WORKDIR /tmp
 
 RUN apt-get update \
  && apt-get install -y default-jre-headless libjna-java mediainfo libchromaprint-tools unrar p7zip-full p7zip-rar mkvtoolnix mp4v2-utils gnupg curl file inotify-tools \
@@ -28,8 +29,6 @@ VOLUME /output
 ENV HOME /data
 ENV LANG C.UTF-8
 ENV FILEBOT_OPTS "-Dapplication.deployment=docker -Duser.home=$HOME"
-
-WORKDIR /tmp
 
 # Set environment variables.
 ENV APP_NAME="FileBot" \
