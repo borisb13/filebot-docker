@@ -24,4 +24,6 @@ ENV FILEBOT_OPTS "-Dapplication.deployment=docker -Duser.home=$HOME"
 
 WORKDIR /tmp
 
-ENTRYPOINT ["filebot"]
+SHELL ["/bin/bash", "-c"]
+
+#ENTRYPOINT ["filebot"]
