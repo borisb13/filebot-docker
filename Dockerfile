@@ -46,7 +46,7 @@ ENV APP_NAME="FileBot" \
     AMC_SUBTITLE_LANG= \
     AMC_CUSTOM_OPTIONS= \
     AMC_INPUT_FOLDER=/watch \
-    SETTLE_DOWN_TIME=600 \
+    SETTLE_DOWN_TIME=60 \
     AMC_OUTPUT_FOLDER=/output
     
 # Metadata.
