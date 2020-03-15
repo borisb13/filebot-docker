@@ -32,7 +32,6 @@ ENV FILEBOT_OPTS "-Dapplication.deployment=docker -Duser.home=$HOME"
 
 # Set environment variables.
 ENV APP_NAME="FileBot" \
-    AMC_INTERVAL="300" \
     AMC_INPUT_STABLE_TIME="10" \
     AMC_ACTION="move" \
     AMC_CONFLICT="auto" \
