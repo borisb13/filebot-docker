@@ -1,8 +1,6 @@
 FROM rednoah/filebot
 
-SHELL ["/bin/bash", "-c"]
-
-MAINTAINER Reinhard Pointner <rednoah@filebot.net>
+MAINTAINER bestitguys
 
 COPY filebot-watcher /usr/bin/filebot-watcher
 
