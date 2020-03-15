@@ -1,4 +1,4 @@
-FROM rednoah/filebot
+FROM bestitguys/filebot
 
 MAINTAINER bestitguys
 
