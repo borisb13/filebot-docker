@@ -12,9 +12,13 @@ RUN apt-get update \
  && apt-get install -y default-jre-headless libjna-java mediainfo libchromaprint-tools unrar p7zip-full p7zip-rar mkvtoolnix mp4v2-utils gnupg curl file inotify-tools \
  && rm -rvf /var/lib/apt/lists/*
  
-RUN \
-    curl -# -L ${FILEBOT_URL} --output /tmp/filebot.deb && \
-    apt install -y /tmp/filebot.deb
+RUN curl -# -L ${FILEBOT_URL} --output /tmp/filebot.deb && \
+    apt-key adv --fetch-keys https://raw.githubusercontent.com/filebot/plugins/master/gpg/maintainer.pub  && \
+    echo "deb [arch=all] https://get.filebot.net/deb/ universal main" > /etc/apt/sources.list.d/filebot.list && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends filebot && \
+    apt install -y /tmp/filebot.deb && \
+    rm -rvf /var/lib/apt/lists/*
 
 COPY filebot-watcher /usr/bin/filebot-watcher
 
