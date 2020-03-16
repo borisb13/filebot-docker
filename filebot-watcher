@@ -3,6 +3,12 @@
 echo "watching /volume1/$WATCH_DIR_NAME ..."
 
 inotifywait -m "/volume1/$WATCH_DIR_NAME" -e create -e moved_to -e modify --exclude 'part$' --format '%w%f' $INOTIFYWAIT_OPTS | stdbuf -oL uniq | while read -r FILE; do
+	#skip known non-media file types
+	if file --extension "$FILE" | egrep "rar|zip|txt|part"; then
+		echo "skipping $FILE"
+		continue
+	fi
+	
 	# make sure to inform the user that we are waiting for things to settle down
 	echo "Waiting $SETTLE_DOWN_TIME seconds for changes to settle down..."
 
