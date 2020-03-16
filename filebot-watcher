@@ -2,6 +2,7 @@
 
 echo "watching /volume1/$WATCH_DIR_NAME ..."
 
+#ignore partial downloads (ending with 'part')
 inotifywait -m "/volume1/$WATCH_DIR_NAME" -e create -e moved_to -e modify --exclude 'part$' --format '%w%f' $INOTIFYWAIT_OPTS | stdbuf -oL uniq | while read -r FILE; do
 	#skip known non-media file types
 	if file --extension "$FILE" | egrep "rar|zip|txt|part"; then
