@@ -8,8 +8,15 @@ RUN cp /bin/bash /bin/sh
 
 COPY filebot-watcher /usr/bin/filebot-watcher
 
+WORKDIR /tmp
+
 # Set environment variables.
 ENV SETTLE_DOWN_TIME=10 \
+    WATCH_FOLDER_NAME="watch" \
+    OUTPUT_FOLDER_NAME="output" \
+    MEDIA_FOLDER="/volume1" \
+    WATCH_FOLDER=${MEDIA_FOLDER}/${WATCH_FOLDER_NAME} \
+    OUTPUT_FOLDER=${MEDIA_FOLDER}/${OUTPUT_FOLDER_NAME}
     
 # Metadata.
 LABEL \
