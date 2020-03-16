@@ -12,11 +12,9 @@ WORKDIR /tmp
 
 # Set environment variables.
 ENV SETTLE_DOWN_TIME=10 \
-    WATCH_FOLDER_NAME="watch" \
-    OUTPUT_FOLDER_NAME="output" \
-    MEDIA_FOLDER="/volume1" \
-    WATCH_FOLDER=${MEDIA_FOLDER}/${WATCH_FOLDER_NAME} \
-    OUTPUT_FOLDER=${MEDIA_FOLDER}/${OUTPUT_FOLDER_NAME}
+    WATCH_DIR_NAME="watch" \
+    OUTPUT_DIR_NAME="output" \
+    MEDIA_DIR=/volume1
     
 # Metadata.
 LABEL \
