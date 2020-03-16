@@ -24,4 +24,4 @@ LABEL \
       org.label-schema.vcs-url="https://github.com/borisb13/filebot-docker" \
       org.label-schema.schema-version="1.0"
 
-ENTRYPOINT ["/usr/bin/filebot-watcher"]
+ENTRYPOINT ["/usr/bin/filebot-watcher /volume1/${WATCH_DIR_NAME} --output /volume1/${OUTPUT_DIR_NAME}"]
