@@ -26,7 +26,7 @@ ENV WATCH_DIR_NAME="watch" \
     
 # Metadata.
 LABEL \
-      org.label-schema.name="filebotmod" \
+      org.label-schema.name="filebot" \
       org.label-schema.description="Docker container for FileBot" \
       org.label-schema.version="$DOCKER_IMAGE_VERSION" \
       org.label-schema.vcs-url="https://github.com/borisb13/filebot-docker" \
