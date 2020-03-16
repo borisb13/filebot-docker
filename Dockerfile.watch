@@ -1,9 +1,0 @@
-FROM bestitguys/filebot
-
-MAINTAINER bestitguys
-
-COPY filebot-watcher /usr/bin/filebot-watcher
-
-ENV SETTLE_DOWN_TIME 600
-
-#ENTRYPOINT ["/usr/bin/filebot-watcher"]
