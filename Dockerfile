@@ -11,10 +11,18 @@ COPY filebot-watcher /usr/bin/filebot-watcher
 WORKDIR /tmp
 
 # Set environment variables.
-ENV SETTLE_DOWN_TIME=10 \
-    WATCH_DIR_NAME="watch" \
+ENV WATCH_DIR_NAME="watch" \
     OUTPUT_DIR_NAME="output" \
-    MEDIA_DIR=/volume1
+    SETTLE_DOWN_TIME=10 \
+    AMC_ACTION="move" \
+    AMC_CONFLICT="auto" \
+    AMC_MATCH_MODE="opportunistic" \
+    AMC_MUSIC_FORMAT="{plex}" \
+    AMC_MOVIE_FORMAT="{plex}" \
+    AMC_SERIES_FORMAT="{plex}" \
+    AMC_ANIME_FORMAT="{plex}" \
+    AMC_PROCESS_MUSIC="n" \
+    AMC_CUSTOM_OPTIONS= \
     
 # Metadata.
 LABEL \
