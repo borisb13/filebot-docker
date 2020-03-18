@@ -39,6 +39,7 @@ inotifywait -m "/volume1/$WATCH_DIR_NAME" -e create -e moved_to -e modify --excl
 		--def artwork=n \
 		--def clean=y \
 		--def unsorted=y \
+		--def skipExtract=y \
 		-non-strict --log-file amc.log --def excludeList=".excludes"
 	else
 		echo "Ignore: `file --mime-type "$FILE"`"
