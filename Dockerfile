@@ -33,4 +33,4 @@ LABEL \
       org.label-schema.vcs-url="https://github.com/borisb13/filebot-docker" \
       org.label-schema.schema-version="1.0"
 
-ENTRYPOINT ["/usr/bin/start-filebot"]
+ENTRYPOINT ["/usr/bin/filebot-watcher"]
