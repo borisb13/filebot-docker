@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -x
+
+exec "/usr/bin/start_filebot"
