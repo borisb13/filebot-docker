@@ -6,9 +6,10 @@ ARG DOCKER_IMAGE_VERSION=unknown
 
 RUN cp /bin/bash /bin/sh
 
-COPY filebot-watcher /usr/bin/filebot-watcher
-
 WORKDIR /tmp
+
+COPY filebot-watcher /usr/bin/filebot-watcher
+COPY start_filebot /usr/bin/start_filebot
 
 # Set environment variables.
 ENV WATCH_DIR_NAME="watch" \
@@ -32,4 +33,4 @@ LABEL \
       org.label-schema.vcs-url="https://github.com/borisb13/filebot-docker" \
       org.label-schema.schema-version="1.0"
 
-ENTRYPOINT ["/usr/bin/filebot-watcher"]
+ENTRYPOINT ["/usr/bin/start_filebot"]
