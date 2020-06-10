@@ -24,6 +24,7 @@ ENV WATCH_DIR_NAME="watch" \
     AMC_SERIES_FORMAT="{plex}" \
     AMC_ANIME_FORMAT="{plex}" \
     AMC_PROCESS_MUSIC="n" \
+    AMC_MIN_LENGTH=300000
     AMC_CUSTOM_OPTIONS=
     
 # Metadata.
